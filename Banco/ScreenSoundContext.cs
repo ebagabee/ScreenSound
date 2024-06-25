@@ -8,6 +8,7 @@ namespace ScreenSound.Banco
     public class ScreenSoundContext : DbContext
     {
         public DbSet<Artista> Artistas { get; set; }
+
         private string connectionString = "Server=localhost,1433;Database=ScreenSound;User Id=sa;Password=78545632@Abc;Encrypt=False;";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

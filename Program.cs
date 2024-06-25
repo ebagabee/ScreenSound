@@ -2,6 +2,27 @@
 using ScreenSound.Menus;
 using ScreenSound.Modelos;
 
+try
+{
+    var context = new ScreenSoundContext();
+    var artistaDAL = new ArtistaDAL(context);
+
+    var novoArtista = new Artista("Gilberto Gil", "Cantor, compositor, multi-instrumentista");
+
+    artistaDAL.Adicionar(novoArtista);
+
+    var listaArtistas = artistaDAL.Listar();
+
+    foreach (var artista in listaArtistas)
+    {
+        Console.WriteLine(artista);
+    }
+}
+catch (Exception ex)
+{
+
+}
+
 Artista ira = new Artista("Ira!", "Banda Ira!");
 Artista beatles = new("The Beatles", "Banda The Beatles");
 
