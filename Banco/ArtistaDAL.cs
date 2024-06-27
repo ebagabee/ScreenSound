@@ -17,6 +17,11 @@ namespace ScreenSound.Banco
             return context.Artistas.ToList();
         }
 
+        public Artista? RecuperarPeloNome(string nome)
+        {
+            return context.Artistas.FirstOrDefault(a => a.Nome.Equals(nome));
+        }
+
         public void Adicionar(Artista artista)
         {
             context.Artistas.Add(artista);
